@@ -4,8 +4,8 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="BAI">
 	<main class="min-h-screen w-full flex flex-col items-center justify-center text-center text-pretty gap-2">
-		<a class="rounded-full font-bold py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white cursor-pointer inline-flex justify-between items-center active:scale-95 duration-150 gap-3" href="#">
-			<span class="rounded-full bg-white text-black px-2 py-1 -ml-2">
+		<a class="bg-gray-50 hover:bg-gray-100 rounded-full shadow-lg font-bold py-2 px-4 cursor-pointer inline-flex justify-between items-center active:scale-95 duration-150 gap-3" href="#">
+			<span class="rounded-full bg-blue-600 hover:bg-blue-700 px-2 py-1 -ml-2 text-white">
 				Nuevo
 			</span>
 			<span>
@@ -17,12 +17,36 @@ import Layout from '../layouts/Layout.astro';
 		</a>
 		<h1 class="text-4xl font-bold text-blue-600">BACHILLERATO ASUNCIÓN IXTALTEPEC</h1>
 		<h2 class="text-2xl">SEMESTRE ENERO - JUNIO 2024</h2>
-		<section class="flex flex-row items-center justify-between gap-2 font-bold bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-xl shadow-lg">
-			<svg class="w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-				<path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
-			</svg>
-			<p>Consulta los documentos a descargar</p>
-			<button class="bg-blue-600 hover:bg-blue-700 active:scale-95 duration-150 text-white px-4 py-2 rounded-xl">Ver</button>
+		<section class="flex flex-row items-center justify-between gap-3 font-bold bg-gray-50 hover:bg-gray-100 px-4 py-2 rounded-xl shadow-lg">
+			<div class="flex gap-x-1">
+				<svg class="w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+					<path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+				</svg>
+				<p>Consulta los documentos a descargar</p>
+			</div>
+			<button id="showModal" class="bg-blue-600 hover:bg-blue-700 active:scale-95 duration-150 text-white px-4 py-2 rounded-xl">Ver</button>
 		</section>
+		<dialog id="modal" class="rounded-xl p-6">
+			<form method="dialog">
+				<section class="text-left">
+					<h3 class="text-lg font-bold mb-2">Descarga y lee los siguientes documentos</h3>
+					<ul class="list-inside list-disc">
+						<li><a href="#">Documento</a></li>
+						<li><a href="#">Documento</a></li>
+						<li><a href="#">Documento</a></li>
+						<li><a href="#">Documento</a></li>
+					</ul>
+				</section>
+				<button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 rounded-lg px-5 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 active:scale-95 duration-150">Cerrar</button>
+			</form>
+		</dialog>
 	</main>
 </Layout>
+<script type="javascript">
+	const btnShowModal = document.getElementById("showModal");
+	const modal = document.getElementById("modal");
+
+	btnShowModal?.addEventListener("click", () => {
+		modal.showModal();
+	})
+</script>
