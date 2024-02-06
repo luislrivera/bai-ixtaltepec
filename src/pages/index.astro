@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import MisionItem from '../components/MisionItem.astro';
 ---
 
 <Layout title="Inicio">
 	<main class="min-h-screen w-full flex flex-col items-center justify-center text-center text-pretty gap-4">
-		<a class="bg-gray-50 hover:bg-gray-100 rounded-full shadow-md font-bold py-2 px-4 cursor-pointer inline-flex justify-between items-center active:scale-95 duration-150 gap-3" href="#">
+		<a class="bg-gray-50 hover:bg-gray-100 rounded-full shadow-md font-bold py-2 px-4 cursor-pointer inline-flex justify-between items-center active:scale-95 duration-150 gap-3" href="./admision">
 			<span class="rounded-full bg-blue-600 hover:bg-blue-700 px-2 py-1 -ml-2 text-white">
 				Nuevo
 			</span>
@@ -41,12 +42,39 @@ import Layout from '../layouts/Layout.astro';
 			</form>
 		</dialog>
 	</main>
+	<section class="min-h-screen w-full px-4">
+		<h2 class="text-4xl font-bold text-blue-600 text-center mb-6">¿Qué hacemos?</h2>
+		<article class="flex flex-row gap-4 flex-wrap items-center justify-center mx-auto max-w-4xl px-4">
+			<MisionItem
+				title="Educamos guiados por el evangelio"
+				description=""
+			/>
+			<MisionItem 
+				title="Articulados en mística de la comunidad"
+			/>
+			<MisionItem
+				title="Potenciando el protagonismo, en especial el juvenil"
+			/>
+			<MisionItem 
+				title="Trabajando de forma sistémica, tejiendo redes de colaboración"
+			/>
+			<MisionItem
+				title="Hacia una solidaridad transformadora en clave de inclusión"
+			/>
+			<MisionItem
+				title="Con pruebas sostenibles"
+			/>
+			<MisionItem
+				title="En permanente renovación"
+			/>
+		</article>
+	</section>
 </Layout>
 <script type="text/javascript">
 	const btnShowModal = document.getElementById("showModal");
 	const modal = document.getElementById("modal");
 
-	btnShowModal?.addEventListener("click", () => {
+	btnShowModal.addEventListener("click", () => {
 		modal.showModal();
 	})
 </script>
