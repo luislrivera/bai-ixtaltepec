@@ -1,9 +1,15 @@
 ---
+interface Props {
+    class?: string;
+    title: string;
+    description?: string;
+}
+
 const { title, description } = Astro.props;
 ---
 
 
-<div class="w-56 h-40 rounded-xl shadow-lg p-4">
+<div class=`${Astro.props.class} w-64 h-40 rounded-xl shadow-lg p-4 hover:scale-105 duration-150 hover:bg-neutral-100`>
     <h3 class="font-bold text-center text-xl uppercase">{title}</h3>
     <p>{description}</p>
 </div>
