@@ -5,10 +5,11 @@ interface Props {
 
 const { title } = Astro.props;
 import '@fontsource-variable/onest';
+import Navbar from '../components/Navbar.astro';
 ---
 
 <!doctype html>
-<html class="dark" lang="es">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Sitio web oficial de BAI - Ixtaltepec" />
@@ -17,7 +18,8 @@ import '@fontsource-variable/onest';
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="dark">
+	<body y->
+		<Navbar />
 		<slot />
 	</body>
 </html>
