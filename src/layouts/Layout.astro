@@ -18,7 +18,7 @@ import Navbar from '../components/Navbar.astro';
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body y->
+	<body>
 		<Navbar />
 		<slot />
 	</body>
@@ -32,5 +32,9 @@ import Navbar from '../components/Navbar.astro';
 			background: #010101;
 			color: #FAFAFA;
 		}
+	}
+	
+	html{
+		scrollbar-color: #ABACAF #101010;
 	}
 </style>
